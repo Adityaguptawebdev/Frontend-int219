@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Validation</title>
+<style>
+  
+#myForm{
+margin-top: 15%;
+}
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  .error {
+    color: red;
+    font-size: 0.8em;
+    margin-top: 5px;
+  }
+  
+  
+</style>
+</head>
+<body>
+  <form id="myForm">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username">
+    <span id="usernameError" class="error"></span><br>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+    <span id="emailError" class="error"></span><br>
+    
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+    <span id="passwordError" class="error"></span><br>
+    
+    <input type="submit" value="Submit">
+  </form>
+
+  <script>
+  document.getElementById('myForm').addEventListener('submit', function(event) {
+    let username = document.getElementById('username').value.trim();
+    let email = document.getElementById('email').value.trim();
+    let password = document.getElementById('password').value.trim();
+  
+    let usernameError = document.getElementById('usernameError');
+    let emailError = document.getElementById('emailError');
+    let passwordError = document.getElementById('passwordError');
+  
+    let isValid = true;
+  
+    // Username validation
+    if (username === '') {
+      usernameError.textContent = 'Username is required';
+      isValid = false;
+    } else {
+      usernameError.textContent = '';
+    }
+  
+    // Email validation
+    if (email === '') {
+      emailError.textContent = 'Email is required';
+      isValid = false;
+    } else if (!isValidEmail(email)) {
+      emailError.textContent = 'Invalid email format';
+      isValid = false;
+    } else {
+      emailError.textContent = '';
+    }
+  
+    // Password validation
+    if (password === '') {
+      passwordError.textContent = 'Password is required';
+      isValid = false;
+    } else if (password.length < 6) {
+      passwordError.textContent = 'Password must be at least 6 characters long';
+      isValid = false;
+    } else {
+      passwordError.textContent = '';
+    }
+  
+    if (!isValid) {
+      event.preventDefault();
+    }
+  });
+  
+  function isValidEmail(email) {
+    // Basic email validation, you can use regex for more complex validation
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+  </script>
+</body>
+</html>
