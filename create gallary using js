@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Gallery</title>
+<style>
+  /* Style for the gallery */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 10px;
+  }
+  
+  /* Style for each image */
+  .gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<div class="gallery">
+  <img src="https://via.placeholder.com/200" alt="Image 1">
+  <img src="https://via.placeholder.com/200" alt="Image 2">
+  <img src="https://via.placeholder.com/200" alt="Image 3">
+  <img src="https://via.placeholder.com/200" alt="Image 4">
+  <img src="https://via.placeholder.com/200" alt="Image 5">
+  <!-- Add more images as needed -->
+</div>
+
+<script>
+// JavaScript to handle gallery functionality
+document.addEventListener('DOMContentLoaded', function () {
+  const images = document.querySelectorAll('.gallery img');
+  
+  images.forEach(image => {
+    image.addEventListener('click', function () {
+      // Show clicked image in a larger view (You can customize this part)
+      alert('You clicked on: ' + this.alt);
+    });
+  });
+});
+</script>
+
+</body>
+</html>
