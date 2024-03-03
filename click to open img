@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.pic
+{ 
+width:100px; 
+height:100px; 
+border:3px solid grey; 
+cursor: pointer;
+ 
+} 
+.pic:hover{
+    border-color: aqua;
+
+}
+    </style>
+</head>
+<body>
+
+    <img id="mainImage" style="border:3px solid grey" src="https://images.pexels.com/photos/235990/pexels-photo-235990.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" height="500px" width="540px"/> 
+    
+<div id="divId" onclick="changeImageOnClick()" onmouseover="f1()" onmouseout="f2()">
+    <img id="2" class="pic" src="https://images.pexels.com/photos/47547/squirrel-animal-cute-rodents-47547.jpeg?cs=srgb&dl=pexels-pixabay-47547.jpg&fm=jpg">
+    <img id="3" class="pic" src="https://loveincorporated.blob.core.windows.net/contentimages/body/d4919611-6e7e-4d4e-9766-c243dfcc9ee2-squirreledited.jpg">
+    <img id="4" class="pic" src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=800">
+    <img id="5" class="pic" src="https://images.pexels.com/photos/39857/leopard-leopard-spots-animal-wild-39857.jpeg?auto=compress&cs=tinysrgb&w=800">
+    <img id="6" class="pic" src="https://images.pexels.com/photos/47547/squirrel-animal-cute-rodents-47547.jpeg?cs=srgb&dl=pexels-pixabay-47547.jpg&fm=jpg">
+    <img id="7" class="pic" src="https://loveincorporated.blob.core.windows.net/contentimages/body/d4919611-6e7e-4d4e-9766-c243dfcc9ee2-squirreledited.jpg">
+    <img id="8" class="pic" src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=800">
+    <img id="9" class="pic" src="https://images.pexels.com/photos/39857/leopard-leopard-spots-animal-wild-39857.jpeg?auto=compress&cs=tinysrgb&w=800">
+
+</div>
+
+<script>
+
+    function changeImageOnClick(){
+        if(x.tagName==img){ 
+a=x.getAttribute("src"); 
+document.getElementById("mainImage").setAttribute("src",a); 
+} 
+    }
+    
+function f1() 
+{ 
+x=event.target; 
+
+} 
+function f2() 
+{ 
+x=event.target; 
+
+} 
+</script>
+</body>
+</html>
