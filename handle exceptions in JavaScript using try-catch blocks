@@ -1,0 +1,15 @@
+// Define a function
+function myFunction() {
+    console.log("Function is defined.");
+}
+
+try {
+    // Call the function that may or may not be defined
+    undefinedFunction();
+} catch (error) {
+    // Handle the error
+    console.error('An error occurred:', error.message);
+}
+
+// Call the defined function
+myFunction();
