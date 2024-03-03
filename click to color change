@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>click</button>
+
+  <script>
+   
+    const body = document.querySelector('body');
+const button = document.querySelector('button');
+const colors = ['red', 'yellow', 'blue'];
+body.style.backgroundColor = 'yellow';
+button.addEventListener('click', function(){
+  const colorIndex = parseInt(Math.random() * colors.length);
+  body.style.backgroundColor = colors[colorIndex];
+});
+  </script>
+</body>
+</html>
